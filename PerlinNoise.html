@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+ <!-- 
+ ==========================================================================
+Assignment #1 - Computer Graphics
+ ==========================================================================
+ Creator: jlang (Jochen Lang)
+ Email:   jlang@uottawa.ca
+ ==========================================================================
+ $Log: shapes.html,v $
+ Revision 1.2  2019/01/12 19:52:50  jlang
+ Lab 0 solution; animation, resizing, various geometries
+
+ ========================================================================== 
+-->
+<html>
+  <head>
+    <title>CSI4130 Assignment #1</title>
+    <style>
+        @font-face { 
+            font-family: Champ; src: url('assets/Champagne.ttf'); 
+        } 
+        @font-face { 
+            font-family: ChampBold; font-weight: bold; src: url("assets/ChampagneBold.ttf");
+            }
+        @font-face { 
+            font-family: ChampIt; font-weight: italic; src: url('assets/ChampagneItalic.ttf');
+            }
+
+        body {
+            /* set margin to 0 and overflow to hidden, to go fullscreen */
+            margin: 0;
+            overflow: hidden;
+            background-color: #3d3d3d;
+            font-family: Champ;
+            color:white
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        /* All for the links in the positions*/
+
+        .mainLink a,a:visited,a:hover,a:active{
+            -webkit-backface-visibility:hidden;
+            backface-visibility:hidden;
+        	position:relative;
+            transition:0.5s color ease;
+        	text-decoration:none;
+            color:#81b3d2;
+            font-size: 4vh; /* Change size of the Link font */
+        }
+
+        footer .mainLink a,a:visited,a:hover,a:active{
+            -webkit-backface-visibility:hidden;
+            backface-visibility:hidden;
+        	position:relative;
+            transition:0.5s color ease;
+        	text-decoration:none;
+            color:#81b3d2;
+            font-size: 2vw; /* Change size of the Link font */
+        } 
+        .mainLink a:hover{
+            color:red;
+            font-size: 4vh;
+        }
+
+        footer .mainLink a:hover{
+            color:red;
+            font-size: 2vw;
+        }
+
+        .mainLink a.before:before,.mainLink a.after:after{
+            content: "";
+            transition:0.5s all ease;
+            -webkit-backface-visibility:hidden;
+            backface-visibility:hidden;
+            position:absolute;
+        }
+        .mainLink a.before:before{
+            top:-0.15em;
+        }
+        .mainLink a.after:after{
+            bottom:-0.15em;
+        }
+        .mainLink a.before:before,.mainLink a.after:after{
+            height:5px;
+            height:0.1rem;
+            width:0;
+            background:red;
+        }
+        .mainLink a.first:after{
+            left:0;
+        }
+
+        .mainLink a.before:hover:before,.mainLink a.after:hover:after{
+            width:100%;
+        }
+        footer{
+            padding-bottom: 10px;
+        }
+
+        .footerLinkHelper{
+            font-size: 1vw !important;
+        }
+
+        .footerLinkHelper:hover{
+            font-size:1vw !important;
+        }
+
+        .loveContainer{
+            text-align: center;
+        }
+
+        .withLove {
+            font-size: 1vw;
+            bottom: auto;
+            right: auto;
+          }
+          .withLove .heart {
+            display: inline-block;
+            font-size: 1vw;
+            margin: 0 3px;
+        	color: #e00;
+            animation: pound 1s infinite alternate;
+            -webkit-animation: pound 1s infinite alternate;
+          }
+
+          @-webkit-keyframes pound {
+            to {
+              transform: scale(1.3);
+            }
+          }
+      
+          @keyframes pound {
+        	to { transform: scale(1.3); }
+        }
+    </style>
+    </head>
+    <body>
+    <section id="canvas"></section>
+    <div class=loveContainer>
+        <span class="withLove">Made with <span class="heart pulse">❤</span> by <span class="mainLink"><a class="footerLinkHelper first after" href="https://www.vsusini.com/" target="_blank" rel="noopener noreferrer">Vincent Susini</a></span>
+        </span></div>
+    <!-- Three.js API -->
+    <script type="text/javascript" src="assets/three/build/three.js"></script>
+    <!-- dat.gui for simple ui -->
+    <script type="text/javascript" src="assets/dat.gui/build/dat.gui.js"></script>
+    <!-- js Code -->
+    <script type="text/javascript" src="PerlinNoise.js"></script>
+</body>
+</html>
