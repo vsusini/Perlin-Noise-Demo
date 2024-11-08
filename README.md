@@ -4,8 +4,6 @@
 
 An interactive 3D terrain generator using Perlin and Simplex noise, built with Three.js. This project visualizes noise algorithms through a dynamic point-based terrain system with customizable parameters.
 
-![Perlin Noise Demo](screenshot.png) <!-- You might want to add a screenshot of your demo -->
-
 ## Overview
 
 This project was developed as part of a fourth-year Computer Graphics course, exploring the implementation and applications of Perlin noise. The visualization uses Three.js to create a terrain-like surface where dot heights are determined by noise functions, with color variations based on elevation.
