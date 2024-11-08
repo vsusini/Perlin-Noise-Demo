@@ -67,10 +67,6 @@ The demo includes several controllable parameters:
 - Wave-Height Camera: Mid-level perspective
 - First Person: Immersive ground-level view
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## Acknowledgments
 
 - Based on Stefan Gustavson's Perlin noise implementation
